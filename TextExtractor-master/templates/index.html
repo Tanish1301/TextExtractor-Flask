@@ -1,0 +1,39 @@
+{% include "header.html" %}
+
+{% block body %}
+
+    <div class="container">
+        <h1 class="text-center" style="font-size: 10vh">TEXT EXTRACTOR</h1>
+        <hr>
+
+        <h2>Description:</h2>
+        <h4>Extract all the text saved into an image using Optical Character Recognition (OCR)</h4>
+
+        <hr>
+        <br><br>
+
+        <div class="text-center">
+            <form action="scanner" method=post enctype=multipart/form-data>
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input type="file" name="file" class="custom-file-input" id="inputGroupFile01"
+                               aria-describedby="inputGroupFileAddon01" accept="image/*">
+                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                    </div>
+                </div>
+
+                <br>
+                <button type="submit" class="btn btn-raised btn-primary">SHOW SCANNED TEXT</button>
+
+            </form>
+        </div>
+    </div>
+
+
+{% if scanned %}
+    <hr>
+    <h1>Scanned results</h1>
+{% endif %}
+{% endblock body %}
+
+{% include "footer.html" %}
